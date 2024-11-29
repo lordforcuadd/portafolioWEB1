@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Web</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-6 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <h1 class="text-3xl font-bold">Mi Portafolio</h1>
+      <nav>
+        <a href="#blog" class="text-lg mx-2 hover:underline">Blog</a>
+        <a href="#classroom" class="text-lg mx-2 hover:underline">Classroom</a>
+        <a href="#facebook" class="text-lg mx-2 hover:underline">Facebook</a>
+        <a href="#google-site" class="text-lg mx-2 hover:underline">Google Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto my-8 px-4">
+    <!-- Blog Section -->
+    <section id="blog" class="mb-12 fade-in">
+      <h2 class="text-2xl font-bold text-center mb-6">Mi Blog</h2>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href="https://cursocrypto404.blogspot.com/2024/11/que-es-y-por-que-deberias-aprender.html" target="_blank" class="transition transform hover:scale-105">
+          <img src="https://cdn.pixabay.com/photo/2022/01/16/16/44/blogger-logo-6942640_1280.png" alt="Blog Image" class="rounded-lg shadow-lg w-64 h-40 object-cover">
+          <p class="text-center mt-2 font-medium">Visita mi Blog</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Classroom Section -->
+    <section id="classroom" class="mb-12 fade-in">
+      <h2 class="text-2xl font-bold text-center mb-6">Curso en Classroom</h2>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href="https://classroom.google.com/c/NzI2NDM4NjE3MjA1?cjc=zccmv6g" target="_blank" class="transition transform hover:scale-105">
+          <img src="https://ctl.uaf.edu/wp-content/uploads/sites/2/2019/05/google-classroom-logo-1024x1024.png" alt="Classroom Image" class="rounded-lg shadow-lg w-64 h-40 object-cover">
+          <p class="text-center mt-2 font-medium">Accede a mi curso</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Facebook Section -->
+    <section id="facebook" class="mb-12 fade-in">
+      <h2 class="text-2xl font-bold text-center mb-6">Grupo de Facebook</h2>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href="https://www.facebook.com/groups/1287787395574813" target="_blank" class="transition transform hover:scale-105">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiXN9xSEe8unzPBEQOeAKXd9Q55efGHGB9BA&s" alt="Facebook Group" class="rounded-lg shadow-lg w-64 h-40 object-cover">
+          <p class="text-center mt-2 font-medium">Únete a mi grupo</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Google Site Section -->
+    <section id="google-site" class="mb-12 fade-in">
+      <h2 class="text-2xl font-bold text-center mb-6">Mi Google Site</h2>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href="https://sites.google.com/view/portafolio-seminario123/inicio" target="_blank" class="transition transform hover:scale-105">
+          <img src="https://localo.com/es/assets/img/definitions/what-is-google-sites.webp" alt="Google Site Image" class="rounded-lg shadow-lg w-64 h-40 object-cover">
+          <p class="text-center mt-2 font-medium">Explora mi sitio</p>
+        </a>
+      </div>
+    </section>
+</main>
+
+
+  <footer class="bg-gray-800 text-white py-4 text-center">
+    <p>&copy; 2024 Mi Portafolio. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
